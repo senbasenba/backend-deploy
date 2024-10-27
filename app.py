@@ -2,7 +2,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})  # CORS設定を更新
+# Next.js のデプロイ済みURLを CORS の設定に追加
+CORS(app, resources={r"/api/*": {"origins": "https://temp-step32-demo-azf2eebpfwcmc4de.eastus-01.azurewebsites.net"}})
 
 @app.route('/', methods=['GET'])
 def hello():
